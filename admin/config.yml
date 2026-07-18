@@ -19,15 +19,19 @@ collections: # A list of collections the CMS should be able to edit
     meta: # Meta data fields. Just like fields, but without any preview element
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
 
-  - name: "pages"
-    label: "Pages"
-    label_singular: "Page"
-    folder: ""
-    create: true
-    slug: "{{slug}}"
-    editor:
-      preview: false
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
+ - name: "pages"
+  label: "Pages"
+  files:
+    - label: "About"
+      name: "about"
+      file: "about.md"
+      fields:
+        - { label: "Title", name: "title", widget: "string" }
+        - { label: "Body", name: "body", widget: "markdown" }
+
+    - label: "Home"
+      name: "home"
+      file: "index.md"
+      fields:
+        - { label: "Title", name: "title", widget: "string" }
+        - { label: "Body", name: "body", widget: "markdown" }
